@@ -3,13 +3,15 @@
 </template>
 
 <script>
-import url from '../assets/base.png';
 
-let base = new Image();
-base.src = url;
 
 export default {
-  name: 'HelloWorld',
+  name: 'Card',
+  props: {
+    url: String,
+    pos: Object,
+    fontSize: Number,
+  },
   mounted() {
     this.canvas = document.createElement('canvas');
     this.ctx = this.canvas.getContext('2d');
@@ -17,6 +19,8 @@ export default {
   },
   methods: {
     init() {
+      let base = new Image();
+      base.src = this.url;
       base.onload = () => {
         this.canvas.width = base.width;
         this.canvas.height = base.height;
@@ -26,17 +30,18 @@ export default {
       };
     },
     cover() {
-      let pos = {x: 195, y: 520, width: 370, height: 40};
+      let pos = this.pos || {x: 195, y: 520, width: 370, height: 40};
       let args = [pos.x, pos.y,pos.width, pos.height];
       this.ctx.fillStyle = '#fff';
       this.ctx.fillRect(...args);
-      this.ctx.font = '28px sans-serif' ;
+      this.ctx.font = `${this.fontSize || 28}px sans-serif` ;
       this.ctx.fillStyle = '#999';
       this.ctx.textBaseline = 'top';
       this.ctx.fillText(`更新于: ${this.now()}`, pos.x, pos.y);
     },
     now() {
       let now = new Date();
+      now = new Date(now.getTime() + Math.random() * 90000)
       let year = now.getFullYear();
       let mon = now.getMonth() + 1;
       let day = now.getDate();
@@ -64,7 +69,7 @@ export default {
 </script>
 <style>
   .img {
-    width: 90vw;
+    width: 80vw;
     height: auto;
   }
 </style>
