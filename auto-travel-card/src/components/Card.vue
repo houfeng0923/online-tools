@@ -41,7 +41,7 @@ export default {
     },
     now() {
       let now = new Date();
-      now = new Date(now.getTime() + Math.random() * 90000)
+      now = new Date(now.getTime() - Math.random() * 90000)
       let year = now.getFullYear();
       let mon = now.getMonth() + 1;
       let day = now.getDate();
