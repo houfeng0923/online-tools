@@ -7,7 +7,7 @@
 import Card from './components/Card.vue';
 
 import me from './assets/base.png';
-import mi from './assets/mi.jpg';
+import mi from './assets/mi.png';
 
 export default {
   name: 'App',
