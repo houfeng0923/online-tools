@@ -28,7 +28,8 @@ export default {
     cover() {
       let pos = {x: 195, y: 520, width: 370, height: 40};
       let args = [pos.x, pos.y,pos.width, pos.height];
-      this.ctx.clearRect(...args);
+      this.ctx.fillStyle = '#fff';
+      this.ctx.fillRect(...args);
       this.ctx.font = '28px sans-serif' ;
       this.ctx.fillStyle = '#999';
       this.ctx.textBaseline = 'top';
@@ -63,7 +64,7 @@ export default {
 </script>
 <style>
   .img {
-    width: auto;
-    height: 100vh;
+    width: 90vw;
+    height: auto;
   }
 </style>
