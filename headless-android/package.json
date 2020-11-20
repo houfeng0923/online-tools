@@ -1,0 +1,16 @@
+{
+  "name": "headless-android",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "node ./server/index.js",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "koa-route": "^3.2.0",
+    "vue": "^3.0.2"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.0.2",
+    "vite": "^1.0.0-rc.8"
+  }
+}
